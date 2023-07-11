@@ -29,7 +29,7 @@ SECRET_KEY = env("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DJANGO_DEBUG")
 
-ALLOWED_HOSTS = ['127.0.01', 'localhost', '.heroku.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.heroku.app']
 
 # Application definition
 
@@ -121,7 +121,13 @@ AUTHENTICATION_BACKENDS = [
     # django allauth
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "pooriaaghapour94@gmail.com"
+EMAIL_HOST_PASSWORD = "Pan20200"
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
